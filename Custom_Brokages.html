@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Customs Brokerage — LogiCore</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f5;
+  --dark:#1c1917;
+  --red:#080808;
+  --gold:#ffbc04;
+  --cream:#f0ebe2;
+  --muted:#78716c;
+  --border:#e8e2d9;
+}
+body{font-family:'Mulish',sans-serif;background:var(--bg);color:var(--dark);overflow-x:hidden}
+
+/* NAV STRIP */
+.nav{
+  background:var(--dark);padding:16px 6vw;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:.04em}
+.nav-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* HERO */
+.hero{
+  position:relative;min-height:88vh;
+  background:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&auto=format&fit=crop') center/cover no-repeat;
+  display:flex;align-items:center;padding:0 6vw;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(28,25,23,.92) 50%,rgba(28,25,23,.5) 100%);
+}
+.hero-content{position:relative;z-index:2;max-width:620px}
+.hero-service{
+  font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:12px;margin-bottom:28px;
+}
+.hero-service::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-content h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,7vw,90px);font-weight:700;line-height:.94;color:#fff;
+  letter-spacing:-.01em;
+}
+.hero-content h1 .hl{color:var(--gold)}
+.hero-content p{
+  margin-top:24px;font-size:16px;color:rgba(255,255,255,.65);
+  line-height:1.85;max-width:460px;font-weight:300;
+}
+.hero-btns{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn-red{
+  background:var(--red);color:#fff;font-size:12px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;padding:16px 36px;text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+.btn-red:hover{background:#ffbc04;transform:translateY(-2px)}
+.btn-outline{
+  border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;padding:16px 36px;text-decoration:none;
+  transition:border-color .2s;
+}
+.btn-outline:hover{border-color:var(--gold)}
+
+/* TRUST BAR */
+.trust{
+  background:var(--gold);padding:20px 6vw;
+  display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:center;
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;
+  color:var(--dark);letter-spacing:.04em;text-transform:uppercase;
+}
+.trust-item svg{width:18px;height:18px;stroke:var(--dark);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* SECTION */
+.section{padding:88px 6vw}
+.section-inner{max-width:1100px;margin:0 auto}
+.stag{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,58px);font-weight:700;line-height:1.05}
+.divline{width:40px;height:2px;background:var(--gold);margin:18px 0 40px}
+
+/* SERVICES LIST */
+.srv-list{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:16px}
+.srv-item{
+  background:#fff;padding:36px 32px;
+  display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:flex-start;
+  transition:background .25s;
+}
+.srv-item:hover{background:var(--cream)}
+.srv-num{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;
+  color:var(--gold);line-height:1;
+}
+.srv-item h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:8px}
+.srv-item p{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr}
+.split-img{
+  background:url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=900&auto=format&fit=crop') center/cover no-repeat;
+  min-height:480px;
+}
+.split-text{background:var(--dark);padding:64px 48px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.split-text .stag{color:var(--gold)}
+.split-text h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:#fff;line-height:1.1}
+.split-text p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;margin-top:18px}
+.compliance-list{margin-top:28px;list-style:none;display:flex;flex-direction:column;gap:14px}
+.compliance-list li{display:flex;gap:14px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.75)}
+.compliance-list li .dot{width:6px;height:6px;background:var(--gold);flex-shrink:0;margin-top:6px}
+
+/* PROCESS */
+.process-section{background:var(--cream);padding:80px 6vw}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0;background:var(--border);margin-top:40px}
+.pstep{background:var(--bg);padding:32px 24px;border-right:1px solid var(--border);position:relative}
+.pstep:last-child{border-right:none}
+.pstep::before{
+  content:attr(data-n);
+  font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;
+  color:rgba(201,168,76,.12);position:absolute;top:10px;right:16px;line-height:1;
+}
+.pstep-icon{font-size:24px;margin-bottom:16px}
+.pstep h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.pstep p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* FOOTER */
+.footer-strip{
+  background:var(--red);padding:48px 6vw;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
+}
+.footer-strip h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#fff}
+.footer-strip a{
+  background:#fff;color:var(--red);font-weight:600;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;padding:15px 32px;text-decoration:none;
+  transition:transform .2s;
+}
+.footer-strip a:hover{transform:translateY(-2px)}
+
+@media(max-width:768px){
+  .srv-list{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .split-img{min-height:260px}
+  .split-text{padding:48px 24px}
+}
+</style>
+<style>
+/* ===== QUOTE POP-UP (shared) ===== */
+#quote{position:fixed;inset:0;z-index:9990;display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow-y:auto;background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;font-family:inherit;color:#fff;cursor:auto}
+#quote.open{opacity:1;visibility:visible}
+#quote .qform{width:100%;max-width:760px;margin:auto;background:linear-gradient(160deg,#0a0a0a 0%,#1c1917 100%);border:1px solid rgba(255,188,4,.35);border-radius:20px;padding:44px;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:translateY(30px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#quote.open .qform{transform:none}
+#quote .q-close{position:absolute;top:14px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:22px;line-height:1;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+#quote .q-close:hover{background:#ffbc04;color:#111;transform:rotate(90deg)}
+#quote .q-head{text-align:center;margin-bottom:30px}
+#quote .q-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#ffbc04;margin-bottom:10px}
+#quote .q-title{font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.1;color:#fff}
+#quote .q-sub{margin:12px auto 0;max-width:460px;color:rgba(255,255,255,.65);font-size:14px;line-height:1.7}
+#quote .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#quote .qgroup{display:flex;flex-direction:column;gap:8px}
+#quote .qgroup.full{grid-column:1/-1}
+#quote .qgroup label{font-size:13px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.04em}
+#quote .qgroup input,#quote .qgroup select,#quote .qgroup textarea{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:13px 15px;color:#fff;font-family:inherit;font-size:15px;outline:none;transition:border-color .25s,background .25s;width:100%;cursor:text}
+#quote .qgroup select{cursor:pointer}
+#quote .qgroup input::placeholder,#quote .qgroup textarea::placeholder{color:rgba(255,255,255,.35)}
+#quote .qgroup input:focus,#quote .qgroup select:focus,#quote .qgroup textarea:focus{border-color:#ffbc04;background:rgba(255,255,255,.12)}
+#quote .qgroup select option{background:#111;color:#fff}
+#quote .qgroup textarea{resize:vertical;min-height:100px}
+#quote .qsubmit{margin-top:26px;text-align:center}
+#quote .btn-accent{background:#ffbc04;color:#111;padding:15px 42px;border:none;border-radius:50px;font-family:inherit;font-size:15px;font-weight:800;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 28px rgba(255,188,4,.35);transition:transform .25s,box-shadow .25s;display:inline-flex;align-items:center;gap:10px}
+#quote .btn-accent:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,188,4,.5)}
+#quote .btn-accent:disabled{opacity:.6;cursor:wait;transform:none}
+body.q-lock{overflow:hidden}
+#sq-toast{position:fixed;bottom:28px;right:28px;z-index:9995;background:#ffbc04;color:#111;padding:14px 24px;border-radius:14px;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);transform:translateY(120px);opacity:0;transition:all .35s;max-width:calc(100vw - 56px)}
+#sq-toast.show{transform:translateY(0);opacity:1}
+#sq-toast.err{background:#d92d20;color:#fff}
+@media(max-width:700px){#quote .qgrid{grid-template-columns:1fr}#quote .qform{padding:34px 20px 26px}#quote{padding:3vh 10px}}
+</style>
+
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-logo">SwiftAxis</div>
+ 
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-service">Customs Brokerage</div>
+    <h1>Cross Every <span class="hl">Border</span> With Confidence</h1>
+    <p>Our licensed customs brokers handle all documentation, tariff classification, and compliance so your goods clear without delays or penalties.</p>
+    <div class="hero-btns">
+      <a href="#quote" class="btn-red">Get Clearance Support</a>
+      <a href="#" class="btn-outline">View Our Licences</a>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed Brokers</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> WTO Compliant</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Fast Clearance</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg> Dedicated Agent</div>
+</div>
+
+<div class="section" style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="stag">Brokerage Services</div>
+    <h2>Everything You Need to Clear Customs</h2>
+    <div class="divline"></div>
+    <div class="srv-list">
+      <div class="srv-item">
+        <div class="srv-num">01</div>
+        <div><h3>Import Clearance</h3><p>End-to-end import documentation, duty calculation, and submission to customs authorities on your behalf.</p></div>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">02</div>
+        <div><h3>Export Clearance</h3><p>Export declarations, certificate of origin, phytosanitary and health certificates managed seamlessly.</p></div>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">03</div>
+        <div><h3>HS Tariff Classification</h3><p>Accurate Harmonized System code classification to ensure correct duty rates and avoid penalties.</p></div>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">04</div>
+        <div><h3>Duty & Tax Management</h3><p>Optimization of applicable duties, VAT, excise taxes, and access to duty relief schemes where eligible.</p></div>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">05</div>
+        <div><h3>Trade Compliance Consulting</h3><p>Audits, training, and advisory services to ensure your business remains compliant with evolving trade laws.</p></div>
+      </div>
+      <div class="srv-item">
+        <div class="srv-num">06</div>
+        <div><h3>Permits & Licences</h3><p>Assistance obtaining import/export permits, licences, and regulatory approvals across all sectors.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="split-img"></div>
+  <div class="split-text">
+    <div class="stag">Trade Compliance</div>
+    <h2>Stay Compliant. Avoid Penalties.</h2>
+    <p>Non-compliance with customs regulations can result in shipment delays, fines, and seizures. Our team stays ahead of regulatory changes so you don't have to.</p>
+    <ul class="compliance-list">
+      <li><span class="dot"></span>Continuous monitoring of customs regulation changes</li>
+      <li><span class="dot"></span>Pre-shipment documentation verification</li>
+      <li><span class="dot"></span>Valuation and transfer pricing support</li>
+      <li><span class="dot"></span>Post-entry audit preparation</li>
+      <li><span class="dot"></span>Restricted party & sanctions screening</li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-section">
+  <div class="section-inner">
+    <div class="stag" style="color:var(--red)">Our Process</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,52px);font-weight:700">From Submission to Release</h2>
+    <div class="divline"></div>
+    <div class="process-steps">
+      <div class="pstep" data-n="1">
+        <div class="pstep-icon">📋</div>
+        <h4>Document Collection</h4>
+        <p>We gather all required commercial and shipping documents from your team.</p>
+      </div>
+      <div class="pstep" data-n="2">
+        <div class="pstep-icon">🔍</div>
+        <h4>Classification & Valuation</h4>
+        <p>Correct HS code assignment and customs value determination by our experts.</p>
+      </div>
+      <div class="pstep" data-n="3">
+        <div class="pstep-icon">📤</div>
+        <h4>Declaration Filing</h4>
+        <p>Electronic submission of entry to customs authorities with all supporting documents.</p>
+      </div>
+      <div class="pstep" data-n="4">
+        <div class="pstep-icon">✅</div>
+        <h4>Clearance & Release</h4>
+        <p>Duty payment, query resolution, and final release of cargo from customs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE POP-UP -->
+<div id="quote" role="dialog" aria-modal="true" aria-labelledby="q_title" aria-hidden="true">
+  <div class="qform">
+    <button type="button" class="q-close" id="q_close" aria-label="Close quote form">&times;</button>
+    <div class="q-head">
+    <div class="q-label">Get Started</div>
+    <h2 class="q-title" id="q_title">Request a Free Quote</h2>
+    <p class="q-sub">Tell us about your shipment and we'll respond with the best rates within 2 hours.</p>
+  </div>
+    <div class="qgrid">
+      <div class="qgroup"><label for="q_name">Full Name *</label><input id="q_name" type="text" placeholder="John Mensah"/></div>
+      <div class="qgroup"><label for="q_email">Email Address *</label><input id="q_email" type="email" placeholder="john@company.com"/></div>
+      <div class="qgroup"><label for="q_company">Company</label><input id="q_company" type="text" placeholder="Acme Ltd."/></div>
+      <div class="qgroup"><label for="q_phone">Phone</label><input id="q_phone" type="tel" placeholder="+233 20 000 0000"/></div>
+      <div class="qgroup"><label for="q_origin">Origin Country *</label><input id="q_origin" type="text" placeholder="Ghana"/></div>
+      <div class="qgroup"><label for="q_dest">Destination *</label><input id="q_dest" type="text" placeholder="United Kingdom"/></div>
+      <div class="qgroup"><label for="q_weight">Cargo Weight (kg)</label><input id="q_weight" type="number" placeholder="500"/></div>
+      <div class="qgroup"><label for="q_service">Service Type *</label>
+        <select id="q_service">
+          <option value="">Select service...</option>
+          <option>Air Freight</option><option>Ocean Freight (FCL)</option><option>Ocean Freight (LCL)</option><option>Road Freight</option><option>Warehousing</option><option selected>Customs Brokerage</option><option>Supply Chain Management</option>
+        </select>
+      </div>
+      <div class="qgroup full"><label for="q_desc">Cargo Description</label><textarea id="q_desc" placeholder="Type, quantity, dimensions, special handling..."></textarea></div>
+    </div>
+    <div class="qsubmit"><button type="button" id="q_btn" class="btn-accent" onclick="submitQuote()">🚀 Send Quote Request</button></div>
+  </div>
+</div>
+<div id="sq-toast"><span id="sq-icon">✅</span> <span id="sq-msg">Done!</span></div>
+
+<div class="footer-strip">
+  <h3>Need Customs Support?</h3>
+  <a href="#quote">Speak to a Broker →</a>
+</div>
+
+
+<script>
+
+/* QUOTE POP-UP */
+(function(){
+  var modal=document.getElementById('quote'),last=null;
+  function openQuote(e){
+    if(e)e.preventDefault();
+    last=document.activeElement;
+    modal.classList.add('open');document.body.classList.add('q-lock');
+    modal.setAttribute('aria-hidden','false');
+    setTimeout(function(){var f=document.getElementById('q_name');if(f)f.focus({preventScroll:true});},250);
+  }
+  window.closeQuote=function(){
+    modal.classList.remove('open');document.body.classList.remove('q-lock');
+    modal.setAttribute('aria-hidden','true');
+    if(history.replaceState&&location.hash==='#quote')history.replaceState(null,'',location.pathname+location.search);
+    if(last&&last.focus)last.focus({preventScroll:true});
+  };
+  document.querySelectorAll('a[href="#quote"]').forEach(function(a){a.addEventListener('click',openQuote);});
+  modal.addEventListener('click',function(e){if(e.target===modal)closeQuote();});
+  document.getElementById('q_close').addEventListener('click',closeQuote);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeQuote();});
+  if(location.hash==='#quote')openQuote();
+})();
+
+/* QUOTE FORM */
+function sqToast(msg,err){
+  var t=document.getElementById('sq-toast');
+  document.getElementById('sq-msg').textContent=msg;
+  document.getElementById('sq-icon').textContent=err?'❌':'✅';
+  t.className='show'+(err?' err':'');
+  clearTimeout(window._sqT);
+  window._sqT=setTimeout(function(){t.className='';},4000);
+}
+async function submitQuote(){
+  var g=function(id){return document.getElementById(id).value.trim();};
+  var n=g('q_name'),em=g('q_email'),or=g('q_origin'),de=g('q_dest'),sv=document.getElementById('q_service').value;
+  if(!n||!em||!or||!de||!sv){sqToast('Please fill all required fields.',true);return;}
+  var btn=document.getElementById('q_btn');btn.disabled=true;
+  var formData={
+    access_key:'0f477e34-0ffd-475d-b72f-5ee746cd2c58',
+    subject:'New Quote Request – SwiftAxis ('+sv+')',
+    name:n,email:em,company:g('q_company'),phone:g('q_phone'),
+    origin:or,destination:de,weight:g('q_weight'),service:sv,description:g('q_desc')
+  };
+  try{
+    var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(formData)});
+    var data=await res.json();
+    if(data.success){
+      ['q_name','q_email','q_company','q_phone','q_origin','q_dest','q_weight','q_desc'].forEach(function(id){document.getElementById(id).value='';});
+      sqToast("Quote sent! We'll reply within 2 hours.");setTimeout(function(){if(window.closeQuote)closeQuote();},1500);
+    }else{sqToast('Something went wrong. Please try again.',true);}
+  }catch(err){sqToast('Network error. Please check your connection.',true);}
+  btn.disabled=false;
+}
+</script>
+
+</body>
+</html>
