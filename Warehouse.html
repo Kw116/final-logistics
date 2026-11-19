@@ -145,13 +145,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);ove
 .footer-strip a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr}
-  .hero-img{display:none}
+  .hero{grid-template-columns:1fr;min-height:0}
+  /* Keep the hero warehouse image visible on phones */
+  .hero-img{
+    display:block;
+    width:100%;
+    min-height:280px;
+    height:42vw;
+    max-height:380px;
+    background-position:center;
+    background-size:cover;
+  }
   .hero-text{padding:60px 24px}
-  .metrics{grid-template-columns:repeat(2,1fr)}
+  .hero-actions{flex-wrap:wrap}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metric{padding:24px 18px}
   .facility-grid{grid-template-columns:1fr}
   .wh-features{grid-template-columns:1fr}
   .img-feature{grid-template-columns:1fr}
+  /* Keep the warehouse feature image visible and give it room */
+  .if-img{
+    display:block;
+    width:100%;
+    min-height:280px;
+    height:60vw;
+    max-height:420px;
+    background-position:center;
+    background-size:cover;
+  }
+  .if-text{padding:44px 24px}
+}
+
+@media(max-width:480px){
+  .hero-img{min-height:240px;height:65vw}
+  .if-img{min-height:240px;height:65vw}
+  .metric-n{font-size:36px}
+  .metric-l{font-size:10px}
+  .footer-strip h3{font-size:28px}
+  .footer-strip a{padding:13px 20px}
 }
 </style>
 <style>
