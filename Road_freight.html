@@ -95,7 +95,13 @@ h1.big .gd{color:var(--gold)}
 .foot a{background:var(--black);color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:16px 36px;text-decoration:none;display:flex;align-items:center;gap:10px;transition:transform .3s}.foot a:hover{transform:translateY(-3px)}
 .foot a svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-img{display:none}.hero-txt{padding:100px 24px 60px}.srow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-img{display:block;height:300px;position:relative}
+  .hero-img-inner{transform:scale(1.05)}
+  .hero-txt{padding:60px 24px}
+  .srow{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 <style>
 /* ===== QUOTE POP-UP (shared) ===== */
