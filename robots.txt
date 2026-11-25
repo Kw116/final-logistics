@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.swiftaxisinternational.com/sitemap.xml
